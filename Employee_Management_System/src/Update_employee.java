@@ -13,13 +13,14 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class Update_employee extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtSearchemp;
 	private JTable table;
-	private JTable table_1;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -62,24 +63,6 @@ public class Update_employee extends JFrame {
 		contentPane.add(txtSearchemp);
 		txtSearchemp.setColumns(10);
 		
-		table = new JTable();
-		table.setToolTipText("");
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-				{null, null, null, null},
-			},
-			new String[] {
-				"New column", "New column", "New column", "New column"
-			}
-		));
-		table.setBackground(new Color(255, 69, 0));
-		table.setBounds(92, 242, 413, -68);
-		contentPane.add(table);
-		
 		JButton btnNewButton = new JButton("Go Back");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,23 +73,33 @@ public class Update_employee extends JFrame {
 		btnNewButton.setBounds(400, 297, 105, 21);
 		contentPane.add(btnNewButton);
 		
-		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(50, 223, 249, -129);
+		contentPane.add(scrollPane);
+		
+		table = new JTable();
+		table.setToolTipText("");
+		table.setFont(new Font("Times New Roman", Font.PLAIN, 10));
+		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"jhyuh", null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
+				{null, null, null, null, null, null},
 			},
 			new String[] {
-				"New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column"
+				"New column", "Emp_id", "New column", "New column", "New column", "New column"
 			}
-		));
-		table_1.setBounds(39, 223, 162, -110);
-		contentPane.add(table_1);
+		) {
+			Class[] columnTypes = new Class[] {
+				Object.class, Integer.class, Object.class, Object.class, Object.class, Object.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		table.setBounds(62, 127, 412, 160);
+		contentPane.add(table);
 	}
 }
