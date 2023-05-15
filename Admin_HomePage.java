@@ -201,10 +201,10 @@ public class Admin_HomePage extends JFrame implements ActionListener {
 //		lblNewLabel_4.setBounds(10, 179, 150, 35);
 //		middle_panel.add(lblNewLabel_4);
 //		
-		JButton btnNewButton_2_6_1 = new JButton("Manage Leave");
-		btnNewButton_2_6_1.setBounds(250,112,200,57);
-		 middle_panel.add(btnNewButton_2_6_1);
-		 btnNewButton_2_6_1.addActionListener(this);
+// 		JButton btnNewButton_2_6_1 = new JButton("Manage Leave");
+// 		btnNewButton_2_6_1.setBounds(250,112,200,57);
+// 		 middle_panel.add(btnNewButton_2_6_1);
+// 		 btnNewButton_2_6_1.addActionListener(this);
 		 
 		
 		//btnNewButton_2_6_1.addActionListener(new ActionListener() {
